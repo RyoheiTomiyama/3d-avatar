@@ -69,6 +69,8 @@ public class SocketServer : MonoBehaviour
                 OnMessage(str);
             }
 
+            Debug.Log(reader)
+
             // クライアントの接続が切れたら
             if (client.Client.Poll(1000, SelectMode.SelectRead) && (client.Client.Available == 0)) {
                 Debug.Log("Disconnect: "+client.Client.RemoteEndPoint);
